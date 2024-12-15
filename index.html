@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Reader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Research Reader</h1>
+        
+        <div class="instructions">
+            <h3>How to Use</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Click "Choose PDF file" to upload your academic paper</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Click "Simplify Paper" to process your document</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>View the original text on the left and the simplified version on the right</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Highlight any word, and see the definition at the bottom</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-box">
+                <label for="pdfInput" class="file-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Choose PDF file
+                </label>
+                <input type="file" id="pdfInput" accept=".pdf">
+            </div>
+            <div id="fileInfo" class="file-info hidden">
+                <span id="fileName"></span>
+                <button id="clearFile" class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <button id="uploadBtn">Simplify Paper</button>
+        </div>
+        
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <p>Processing your document...</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="text-column original-text">
+                <h2>Original Document</h2>
+                <div id="originalContent" class="content-box"></div>
+            </div>
+            <div class="text-column simplified-text">
+                <h2>Simplified Version</h2>
+                <div id="simplifiedContent" class="content-box"></div>
+            </div>
+        </div>
+    </div>
+    <div id="definitionPopup" class="definition-popup hidden">
+        <div class="definition-content">
+            <button id="closeDefinition" class="close-button">×</button>
+            <h3>Definition</h3>
+            <div id="definitionText"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="app.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Research Reader helps make complex research papers more accessible by converting them into easy-to-understand language.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: petewise9@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Research Reader. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
